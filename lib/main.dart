@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:diacritic/diacritic.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
@@ -16,14 +17,31 @@ class BibleApp extends StatelessWidget {
       darkTheme: ThemeData.dark(useMaterial3: true),
       themeMode: ThemeMode.system,
       title: 'Bible App',
-      home: BibleHomePage(),
+      home: const BibleHomePage(),
     );
   }
 }
 
-// ignore: must_be_immutable
-class BibleHomePage extends StatelessWidget {
-  Map<String, Map<int, int>> versesByChapter = {
+class BibleHomePage extends StatefulWidget {
+  const BibleHomePage({super.key});
+
+  @override
+  State<BibleHomePage> createState() => _BibleHomePageState();
+}
+
+class _BibleHomePageState extends State<BibleHomePage> {
+  final ItemScrollController _itemScrollController = ItemScrollController();
+  final ScrollOffsetController _scrollOffsetController =
+      ScrollOffsetController();
+  final ItemPositionsListener _itemPositionsListener =
+      ItemPositionsListener.create();
+  final ScrollOffsetListener _scrollOffsetListener =
+      ScrollOffsetListener.create();
+
+  List<double> letterPositions =
+      []; // Lista para armazenar as posições das letras
+
+  final Map<String, Map<int, int>> versesByChapter = {
     'Gênesis': {
       1: 31,
       2: 25,
@@ -1185,24 +1203,31 @@ class BibleHomePage extends StatelessWidget {
     },
   };
 
-  BibleHomePage({super.key});
+  Map<String, List<String>> groupedBooks = {};
+
+  List<String> validLetters = [];
+
+  List<String> alphabet = List.generate(
+      26, (index) => String.fromCharCode('A'.codeUnitAt(0) + index));
+
+  // int selectedItemIndex = -1;
 
   @override
   Widget build(BuildContext context) {
     List<String> sortedBooks = versesByChapter.keys.toList()
       ..sort((a, b) => removeDiacritics(a).compareTo(removeDiacritics(b)));
 
-    Map<String, List<String>> groupedBooks = {};
-
     // Group books by the first letter
     for (var book in sortedBooks) {
       String firstLetter = book[0].toUpperCase();
-      groupedBooks[firstLetter] ??= [];
-      groupedBooks[firstLetter]!.add(book);
+      groupedBooks[removeDiacritics(firstLetter)] ??= [];
+      groupedBooks[removeDiacritics(firstLetter)]!.add(book);
     }
 
-    List<String> alphabet = List.generate(
-        26, (index) => String.fromCharCode('A'.codeUnitAt(0) + index));
+    List<String> validLetters =
+        alphabet.where((letter) => groupedBooks.containsKey(letter)).toList();
+
+    validLetters = ['1', '2', '3'] + validLetters;
 
     return Scaffold(
       appBar: AppBar(
@@ -1210,82 +1235,89 @@ class BibleHomePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          // Adicionar os botões de letras
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: alphabet.map((letter) {
+          // Adicione os botões de letras
+          Wrap(
+            alignment: WrapAlignment.center,
+            spacing: 8.0,
+            children: validLetters.map((letter) {
               return ElevatedButton(
                 onPressed: () {
                   // Navegar para a seção correspondente
                   if (groupedBooks.containsKey(letter)) {
-                    final scrollController = ScrollController();
-                    Scrollable.ensureVisible(
-                      scrollController.context,
-                      alignment: 0.0,
-                      duration: const Duration(milliseconds: 500),
-                    );
+                    scrollToSection(validLetters.indexOf(letter));
+                    // selectedItemIndex = validLetters.indexOf(letter);
                   }
                 },
-                child: Text(letter),
+                child: Text(
+                  letter,
+                  style: const TextStyle(fontSize: 16),
+                ),
               );
             }).toList(),
           ),
           Expanded(
-            child: ListView.builder(
+            child: ScrollablePositionedList.builder(
+              itemScrollController: _itemScrollController,
+              scrollOffsetController: _scrollOffsetController,
+              itemPositionsListener: _itemPositionsListener,
+              scrollOffsetListener: _scrollOffsetListener,
               itemCount: groupedBooks.length,
               itemBuilder: (context, letterIndex) {
                 String letter = groupedBooks.keys.elementAt(letterIndex);
                 List<String> booksForLetter = groupedBooks[letter]!;
 
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        letter,
-                        style: const TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
+                return Container(
+                  // color: selectedItemIndex == letterIndex ? Colors.purple : null,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          letter,
+                          style: const TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
                       ),
-                    ),
-                    GridView.builder(
-                      controller: ScrollController(),
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 6, // Define o número de colunas
-                      ),
-                      itemCount: booksForLetter.length,
-                      itemBuilder: (context, index) {
-                        String book = booksForLetter[index];
-                        return GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => BookChaptersPage(
-                                  book,
-                                  versesByChapter[book]!.keys.toList(),
-                                  versesByChapter,
+                      GridView.builder(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 6, // Define o número de colunas
+                        ),
+                        itemCount: booksForLetter.length,
+                        itemBuilder: (context, index) {
+                          String book = booksForLetter[index];
+
+                          return Card(
+                            clipBehavior: Clip.hardEdge,
+                            child: InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => BookChaptersPage(
+                                      book,
+                                      versesByChapter[book]!.keys.toList(),
+                                      versesByChapter,
+                                    ),
+                                  ),
+                                );
+                              },
+                              child: Center(
+                                child: Text(
+                                  book.length > 5 ? book.substring(0, 5) : book,
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(fontSize: 15),
                                 ),
                               ),
-                            );
-                          },
-                          child: Card(
-                            elevation: 5,
-                            child: Center(
-                              child: Text(
-                                book.length > 5 ? book.substring(0, 5) : book,
-                                textAlign: TextAlign.center,
-                                style: const TextStyle(fontSize: 15),
-                              ),
                             ),
-                          ),
-                        );
-                      },
-                    ),
-                  ],
+                          );
+                        },
+                      ),
+                    ],
+                  ),
                 );
               },
             ),
@@ -1293,6 +1325,13 @@ class BibleHomePage extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void scrollToSection(int index) {
+    _itemScrollController.scrollTo(
+        index: index,
+        duration: const Duration(milliseconds: 250),
+        curve: Curves.easeInOutCubic);
   }
 }
 
@@ -1317,25 +1356,26 @@ class BookChaptersPage extends StatelessWidget {
         itemCount: chapters.length,
         itemBuilder: (context, index) {
           int chapter = chapters[index];
-          return GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ChapterVersesPage(
-                    book,
-                    chapter,
-                    versesByChapter[book]![chapter]!,
-                  ),
-                ),
-              );
-            },
-            child: Card(
+          return Card(
+            clipBehavior: Clip.hardEdge,
+            child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ChapterVersesPage(
+                        book,
+                        chapter,
+                        versesByChapter[book]![chapter]!,
+                      ),
+                    ),
+                  );
+                },
                 child: Center(
                     child: Text(
-              '$chapter',
-              style: const TextStyle(fontSize: 25),
-            ))),
+                  '$chapter',
+                  style: const TextStyle(fontSize: 20),
+                ))),
           );
         },
       ),
@@ -1438,23 +1478,24 @@ class ChapterVersesPage extends StatelessWidget {
         itemCount: versesCount,
         itemBuilder: (context, index) {
           int verse = index + 1;
-          return GestureDetector(
-            onTap: () async {
-              String bookNumber = getBookNumber(book);
-              String chapterPad = chapter.toString().padLeft(3, '0');
-              String versePad = verse.toString().padLeft(3, '0');
+          return Card(
+            clipBehavior: Clip.hardEdge,
+            child: InkWell(
+              onTap: () async {
+                String bookNumber = getBookNumber(book);
+                String chapterPad = chapter.toString().padLeft(3, '0');
+                String versePad = verse.toString().padLeft(3, '0');
 
-              Uri url = Uri.parse(
-                  "https://www.jw.org/finder?bible=$bookNumber$chapterPad$versePad");
-              if (await canLaunchUrl(url)) {
-                await launchUrl(url);
-              } else {
-                throw 'Could not launch $url';
-              }
-            },
-            child: Card(
+                Uri url = Uri.parse(
+                    "https://www.jw.org/finder?bible=$bookNumber$chapterPad$versePad");
+                if (await canLaunchUrl(url)) {
+                  await launchUrl(url);
+                } else {
+                  throw 'Could not launch $url';
+                }
+              },
               child: Center(
-                child: Text('$verse', style: const TextStyle(fontSize: 25)),
+                child: Text('$verse', style: const TextStyle(fontSize: 20)),
               ),
             ),
           );
