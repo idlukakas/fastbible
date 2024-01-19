@@ -3,21 +3,27 @@ import 'package:diacritic/diacritic.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
-  runApp(BibleApp());
+  runApp(const BibleApp());
 }
 
 class BibleApp extends StatelessWidget {
+  const BibleApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData.light(useMaterial3: true),
+      darkTheme: ThemeData.dark(useMaterial3: true),
+      themeMode: ThemeMode.system,
       title: 'Bible App',
       home: BibleHomePage(),
     );
   }
 }
 
+// ignore: must_be_immutable
 class BibleHomePage extends StatelessWidget {
-  final Map<String, Map<int, int>> versesByChapter = {
+  Map<String, Map<int, int>> versesByChapter = {
     'Gênesis': {
       1: 31,
       2: 25,
@@ -1179,90 +1185,112 @@ class BibleHomePage extends StatelessWidget {
     },
   };
 
-  // Função auxiliar para remover números dos livros
-  String removeNumbers(String input) {
-    return input.replaceAll(RegExp(r'[0-9]'), '');
-  }
-
-  int compararNomes(String a, String b) {
-    String cleanA = removeDiacritics(a.replaceAll(RegExp(r'^\d+\s*'), ''));
-    String cleanB = removeDiacritics(b.replaceAll(RegExp(r'^\d+\s*'), ''));
-    return cleanA.compareTo(cleanB);
-  }
+  BibleHomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     List<String> sortedBooks = versesByChapter.keys.toList()
       ..sort((a, b) => removeDiacritics(a).compareTo(removeDiacritics(b)));
-    //..sort((a, b) => compararNomes(a, b));
 
     Map<String, List<String>> groupedBooks = {};
 
     // Group books by the first letter
-    sortedBooks.forEach((book) {
+    for (var book in sortedBooks) {
       String firstLetter = book[0].toUpperCase();
       groupedBooks[firstLetter] ??= [];
       groupedBooks[firstLetter]!.add(book);
-    });
+    }
+
+    List<String> alphabet = List.generate(
+        26, (index) => String.fromCharCode('A'.codeUnitAt(0) + index));
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Livros da Bíblia'),
       ),
-      body: ListView.builder(
-        itemCount: groupedBooks.length,
-        itemBuilder: (context, letterIndex) {
-          String letter = groupedBooks.keys.elementAt(letterIndex);
-          List<String> booksForLetter = groupedBooks[letter]!;
+      body: Column(
+        children: [
+          // Adicionar os botões de letras
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: alphabet.map((letter) {
+              return ElevatedButton(
+                onPressed: () {
+                  // Navegar para a seção correspondente
+                  if (groupedBooks.containsKey(letter)) {
+                    final scrollController = ScrollController();
+                    Scrollable.ensureVisible(
+                      scrollController.context,
+                      alignment: 0.0,
+                      duration: const Duration(milliseconds: 500),
+                    );
+                  }
+                },
+                child: Text(letter),
+              );
+            }).toList(),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: groupedBooks.length,
+              itemBuilder: (context, letterIndex) {
+                String letter = groupedBooks.keys.elementAt(letterIndex);
+                List<String> booksForLetter = groupedBooks[letter]!;
 
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  letter,
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ),
-              ),
-              GridView.builder(
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 6, // Define o número de colunas
-                ),
-                itemCount: booksForLetter.length,
-                itemBuilder: (context, index) {
-                  String book = booksForLetter[index];
-                  return GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => BookChaptersPage(
-                            book,
-                            versesByChapter[book]!.keys.toList(),
-                            versesByChapter,
-                          ),
-                        ),
-                      );
-                    },
-                    child: Card(
-                      elevation: 5,
-                      child: Center(
-                        child: Text(
-                          book.length > 5 ? book.substring(0, 5) : book,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 25),
-                        ),
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        letter,
+                        style: const TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                     ),
-                  );
-                },
-              ),
-            ],
-          );
-        },
+                    GridView.builder(
+                      controller: ScrollController(),
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 6, // Define o número de colunas
+                      ),
+                      itemCount: booksForLetter.length,
+                      itemBuilder: (context, index) {
+                        String book = booksForLetter[index];
+                        return GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => BookChaptersPage(
+                                  book,
+                                  versesByChapter[book]!.keys.toList(),
+                                  versesByChapter,
+                                ),
+                              ),
+                            );
+                          },
+                          child: Card(
+                            elevation: 5,
+                            child: Center(
+                              child: Text(
+                                book.length > 5 ? book.substring(0, 5) : book,
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(fontSize: 15),
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -1273,7 +1301,8 @@ class BookChaptersPage extends StatelessWidget {
   final List<int> chapters;
   final Map<String, Map<int, int>> versesByChapter;
 
-  BookChaptersPage(this.book, this.chapters, this.versesByChapter);
+  const BookChaptersPage(this.book, this.chapters, this.versesByChapter,
+      {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -1305,7 +1334,7 @@ class BookChaptersPage extends StatelessWidget {
                 child: Center(
                     child: Text(
               '$chapter',
-              style: TextStyle(fontSize: 25),
+              style: const TextStyle(fontSize: 25),
             ))),
           );
         },
@@ -1319,7 +1348,8 @@ class ChapterVersesPage extends StatelessWidget {
   final int chapter;
   final int versesCount;
 
-  ChapterVersesPage(this.book, this.chapter, this.versesCount);
+  const ChapterVersesPage(this.book, this.chapter, this.versesCount,
+      {super.key});
 
   String getBookNumber(String bookName) {
     final Map<String, int> bookToNumber = {
@@ -1402,7 +1432,7 @@ class ChapterVersesPage extends StatelessWidget {
         title: Text('$book $chapter'),
       ),
       body: GridView.builder(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 6, // Number of columns
         ),
         itemCount: versesCount,
@@ -1424,7 +1454,7 @@ class ChapterVersesPage extends StatelessWidget {
             },
             child: Card(
               child: Center(
-                child: Text('$verse', style: TextStyle(fontSize: 25)),
+                child: Text('$verse', style: const TextStyle(fontSize: 25)),
               ),
             ),
           );
