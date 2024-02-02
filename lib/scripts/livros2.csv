@@ -1,0 +1,982 @@
+Livro;Capitulo;Total_de_Versiculos
+Gênesis;1;31
+Gênesis;2;25
+Gênesis;3;24
+Gênesis;4;26
+Gênesis;5;32
+Gênesis;6;22
+Gênesis;7;24
+Gênesis;8;22
+Gênesis;9;29
+Gênesis;10;32
+Gênesis;11;32
+Gênesis;12;20
+Gênesis;13;18
+Gênesis;14;24
+Gênesis;15;21
+Gênesis;16;16
+Gênesis;17;27
+Gênesis;18;33
+Gênesis;19;38
+Gênesis;20;18
+Gênesis;21;34
+Gênesis;22;24
+Gênesis;23;20
+Gênesis;24;67
+Gênesis;25;34
+Gênesis;26;35
+Gênesis;27;46
+Gênesis;28;22
+Gênesis;29;35
+Gênesis;30;43
+Gênesis;31;55
+Gênesis;32;32
+Gênesis;33;20
+Gênesis;34;31
+Gênesis;35;29
+Gênesis;36;43
+Gênesis;37;36
+Gênesis;38;30
+Gênesis;39;23
+Gênesis;40;23
+Gênesis;41;57
+Gênesis;42;38
+Gênesis;43;34
+Gênesis;44;34
+Gênesis;45;28
+Gênesis;46;34
+Gênesis;47;31
+Gênesis;48;22
+Gênesis;49;33
+Gênesis;50;26
+Êxodo;1;22
+Êxodo;2;25
+Êxodo;3;22
+Êxodo;4;31
+Êxodo;5;23
+Êxodo;6;30
+Êxodo;7;25
+Êxodo;8;32
+Êxodo;9;35
+Êxodo;10;29
+Êxodo;11;10
+Êxodo;12;51
+Êxodo;13;22
+Êxodo;14;31
+Êxodo;15;27
+Êxodo;16;36
+Êxodo;17;16
+Êxodo;18;27
+Êxodo;19;25
+Êxodo;20;26
+Êxodo;21;36
+Êxodo;22;31
+Êxodo;23;33
+Êxodo;24;18
+Êxodo;25;40
+Êxodo;26;37
+Êxodo;27;21
+Êxodo;28;43
+Êxodo;29;46
+Êxodo;30;38
+Êxodo;31;18
+Êxodo;32;35
+Êxodo;33;23
+Êxodo;34;35
+Êxodo;35;35
+Êxodo;36;38
+Êxodo;37;29
+Êxodo;38;31
+Êxodo;39;43
+Êxodo;40;38
+Levítico;1;17
+Levítico;2;16
+Levítico;3;17
+Levítico;4;35
+Levítico;5;19
+Levítico;6;30
+Levítico;7;38
+Levítico;8;36
+Levítico;9;24
+Levítico;10;20
+Levítico;11;47
+Levítico;12;8
+Levítico;13;59
+Levítico;14;57
+Levítico;15;33
+Levítico;16;34
+Levítico;17;16
+Levítico;18;30
+Levítico;19;37
+Levítico;20;27
+Levítico;21;24
+Levítico;22;33
+Levítico;23;44
+Levítico;24;23
+Levítico;25;55
+Levítico;26;46
+Levítico;27;34
+Josué;1;18
+Josué;2;24
+Josué;3;17
+Josué;4;24
+Josué;5;15
+Josué;6;27
+Josué;7;26
+Josué;8;35
+Josué;9;27
+Josué;10;43
+Josué;11;23
+Josué;12;24
+Josué;13;33
+Josué;14;15
+Josué;15;63
+Josué;16;10
+Josué;17;18
+Josué;18;28
+Josué;19;51
+Josué;20;9
+Josué;21;45
+Josué;22;34
+Josué;23;16
+Josué;24;33
+Juízes;1;36
+Juízes;2;23
+Juízes;3;31
+Juízes;4;24
+Juízes;5;31
+Juízes;6;40
+Juízes;7;25
+Juízes;8;35
+Juízes;9;57
+Juízes;10;18
+Juízes;11;40
+Juízes;12;15
+Juízes;13;25
+Juízes;14;20
+Juízes;15;20
+Juízes;16;31
+Juízes;17;13
+Juízes;18;31
+Juízes;19;30
+Juízes;20;48
+Juízes;21;25
+Rute;1;22
+Rute;2;23
+Rute;3;18
+Rute;4;22
+1 Samuel;1;28
+1 Samuel;2;36
+1 Samuel;3;21
+1 Samuel;4;22
+1 Samuel;5;12
+1 Samuel;6;21
+1 Samuel;7;17
+1 Samuel;8;22
+1 Samuel;9;27
+1 Samuel;10;27
+1 Samuel;11;15
+1 Samuel;12;25
+1 Samuel;13;23
+1 Samuel;14;52
+1 Samuel;15;35
+1 Samuel;16;23
+1 Samuel;17;58
+1 Samuel;18;30
+1 Samuel;19;24
+1 Samuel;20;42
+1 Samuel;21;15
+1 Samuel;22;23
+1 Samuel;23;29
+1 Samuel;24;22
+1 Samuel;25;44
+1 Samuel;26;25
+1 Samuel;27;12
+1 Samuel;28;25
+1 Samuel;29;11
+1 Samuel;30;31
+1 Samuel;31;13
+2 Samuel;1;27
+2 Samuel;2;32
+2 Samuel;3;39
+2 Samuel;4;12
+2 Samuel;5;25
+2 Samuel;6;23
+2 Samuel;7;29
+2 Samuel;8;18
+2 Samuel;9;13
+2 Samuel;10;19
+2 Samuel;11;27
+2 Samuel;12;31
+2 Samuel;13;39
+2 Samuel;14;33
+2 Samuel;15;37
+2 Samuel;16;23
+2 Samuel;17;29
+2 Samuel;18;33
+2 Samuel;19;43
+2 Samuel;20;26
+2 Samuel;21;22
+2 Samuel;22;51
+2 Samuel;23;39
+2 Samuel;24;25
+1 Reis;1;53
+1 Reis;2;46
+1 Reis;3;28
+1 Reis;4;34
+1 Reis;5;18
+1 Reis;6;38
+1 Reis;7;51
+1 Reis;8;66
+1 Reis;9;28
+1 Reis;10;29
+1 Reis;11;43
+1 Reis;12;33
+1 Reis;13;34
+1 Reis;14;31
+1 Reis;15;34
+1 Reis;16;34
+1 Reis;17;24
+1 Reis;18;46
+1 Reis;19;21
+1 Reis;20;43
+1 Reis;21;29
+1 Reis;22;53
+2 Reis;1;18
+2 Reis;2;25
+2 Reis;3;27
+2 Reis;4;44
+2 Reis;5;27
+2 Reis;6;33
+2 Reis;7;20
+2 Reis;8;29
+2 Reis;9;37
+2 Reis;10;36
+2 Reis;11;21
+2 Reis;12;21
+2 Reis;13;25
+2 Reis;14;29
+2 Reis;15;38
+2 Reis;16;20
+2 Reis;17;41
+2 Reis;18;37
+2 Reis;19;37
+2 Reis;20;21
+2 Reis;21;26
+2 Reis;22;20
+2 Reis;23;37
+2 Reis;24;20
+2 Reis;25;30
+1 Crônicas;1;54
+1 Crônicas;2;55
+1 Crônicas;3;24
+1 Crônicas;4;43
+1 Crônicas;5;26
+1 Crônicas;6;81
+1 Crônicas;7;40
+1 Crônicas;8;40
+1 Crônicas;9;44
+1 Crônicas;10;14
+1 Crônicas;11;47
+1 Crônicas;12;40
+1 Crônicas;13;14
+1 Crônicas;14;17
+1 Crônicas;15;29
+1 Crônicas;16;43
+1 Crônicas;17;27
+1 Crônicas;18;17
+1 Crônicas;19;19
+1 Crônicas;20;8
+1 Crônicas;21;30
+1 Crônicas;22;19
+1 Crônicas;23;32
+1 Crônicas;24;31
+1 Crônicas;25;31
+1 Crônicas;26;32
+1 Crônicas;27;34
+1 Crônicas;28;21
+1 Crônicas;29;30
+2 Crônicas;1;17
+2 Crônicas;2;18
+2 Crônicas;3;17
+2 Crônicas;4;22
+2 Crônicas;5;14
+2 Crônicas;6;42
+2 Crônicas;7;22
+2 Crônicas;8;18
+2 Crônicas;9;31
+2 Crônicas;10;19
+2 Crônicas;11;23
+2 Crônicas;12;16
+2 Crônicas;13;22
+2 Crônicas;14;15
+2 Crônicas;15;19
+2 Crônicas;16;14
+2 Crônicas;17;19
+2 Crônicas;18;34
+2 Crônicas;19;11
+2 Crônicas;20;37
+2 Crônicas;21;20
+2 Crônicas;22;12
+2 Crônicas;23;21
+2 Crônicas;24;27
+2 Crônicas;25;28
+2 Crônicas;26;23
+2 Crônicas;27;9
+2 Crônicas;28;27
+2 Crônicas;29;36
+2 Crônicas;30;27
+2 Crônicas;31;21
+2 Crônicas;32;33
+2 Crônicas;33;25
+2 Crônicas;34;33
+2 Crônicas;35;27
+2 Crônicas;36;23
+Esdras;1;11
+Esdras;2;70
+Esdras;3;13
+Esdras;4;24
+Esdras;5;17
+Esdras;6;22
+Esdras;7;28
+Esdras;8;36
+Esdras;9;15
+Esdras;10;44
+Neemias;1;11
+Neemias;2;20
+Neemias;3;32
+Neemias;4;23
+Neemias;5;19
+Neemias;6;19
+Neemias;7;73
+Neemias;8;18
+Neemias;9;38
+Neemias;10;39
+Neemias;11;36
+Neemias;12;47
+Neemias;13;31
+Ester;1;22
+Ester;2;23
+Ester;3;15
+Ester;4;17
+Ester;5;14
+Ester;6;14
+Ester;7;10
+Ester;8;17
+Ester;9;32
+Ester;10;3
+Jó;1;22
+Jó;2;13
+Jó;3;26
+Jó;4;21
+Jó;5;27
+Jó;6;30
+Jó;7;21
+Jó;8;22
+Jó;9;35
+Jó;10;22
+Jó;11;20
+Jó;12;25
+Jó;13;28
+Jó;14;22
+Jó;15;35
+Jó;16;22
+Jó;17;16
+Jó;18;21
+Jó;19;29
+Jó;20;29
+Jó;21;34
+Jó;22;30
+Jó;23;17
+Jó;24;25
+Jó;25;6
+Jó;26;14
+Jó;27;23
+Jó;28;28
+Jó;29;25
+Jó;30;31
+Jó;31;40
+Jó;32;22
+Jó;33;33
+Jó;34;37
+Jó;35;16
+Jó;36;33
+Jó;37;24
+Jó;38;41
+Jó;39;30
+Jó;40;24
+Jó;41;34
+Jó;42;17
+Salmos;1;6
+Salmos;2;12
+Salmos;3;8
+Salmos;4;8
+Salmos;5;12
+Salmos;6;10
+Salmos;7;17
+Salmos;8;9
+Salmos;9;20
+Salmos;10;18
+Salmos;11;7
+Salmos;12;8
+Salmos;13;6
+Salmos;14;7
+Salmos;15;5
+Salmos;16;11
+Salmos;17;15
+Salmos;18;50
+Salmos;19;14
+Salmos;20;9
+Salmos;21;13
+Salmos;22;31
+Salmos;23;6
+Salmos;24;10
+Salmos;25;22
+Salmos;26;12
+Salmos;27;14
+Salmos;28;9
+Salmos;29;11
+Salmos;30;12
+Salmos;31;24
+Salmos;32;11
+Salmos;33;22
+Salmos;34;22
+Salmos;35;28
+Salmos;36;12
+Salmos;37;40
+Salmos;38;22
+Salmos;39;13
+Salmos;40;17
+Salmos;41;13
+Salmos;42;11
+Salmos;43;5
+Salmos;44;26
+Salmos;45;17
+Salmos;46;11
+Salmos;47;9
+Salmos;48;14
+Salmos;49;20
+Salmos;50;23
+Salmos;51;19
+Salmos;52;9
+Salmos;53;6
+Salmos;54;7
+Salmos;55;23
+Salmos;56;13
+Salmos;57;11
+Salmos;58;11
+Salmos;59;17
+Salmos;60;12
+Salmos;61;8
+Salmos;62;12
+Salmos;63;11
+Salmos;64;10
+Salmos;65;13
+Salmos;66;20
+Salmos;67;7
+Salmos;68;35
+Salmos;69;36
+Salmos;70;5
+Salmos;71;24
+Salmos;72;20
+Salmos;73;28
+Salmos;74;23
+Salmos;75;10
+Salmos;76;12
+Salmos;77;20
+Salmos;78;72
+Salmos;79;13
+Salmos;80;19
+Salmos;81;16
+Salmos;82;8
+Salmos;83;18
+Salmos;84;12
+Salmos;85;13
+Salmos;86;17
+Salmos;87;7
+Salmos;88;18
+Salmos;89;52
+Salmos;90;17
+Salmos;91;16
+Salmos;92;15
+Salmos;93;5
+Salmos;94;23
+Salmos;95;11
+Salmos;96;13
+Salmos;97;12
+Salmos;98;9
+Salmos;99;9
+Salmos;100;5
+Salmos;101;8
+Salmos;102;28
+Salmos;103;22
+Salmos;104;35
+Salmos;105;45
+Salmos;106;48
+Salmos;107;43
+Salmos;108;13
+Salmos;109;31
+Salmos;110;7
+Salmos;111;10
+Salmos;112;10
+Salmos;113;9
+Salmos;114;8
+Salmos;115;18
+Salmos;116;19
+Salmos;117;2
+Salmos;118;29
+Salmos;119;176
+Salmos;120;7
+Salmos;121;8
+Salmos;122;9
+Salmos;123;4
+Salmos;124;8
+Salmos;125;5
+Salmos;126;6
+Salmos;127;5
+Salmos;128;6
+Salmos;129;8
+Salmos;130;8
+Salmos;131;3
+Salmos;132;18
+Salmos;133;3
+Salmos;134;3
+Salmos;135;21
+Salmos;136;26
+Salmos;137;9
+Salmos;138;8
+Salmos;139;24
+Salmos;140;13
+Salmos;141;10
+Salmos;142;7
+Salmos;143;12
+Salmos;144;15
+Salmos;145;21
+Salmos;146;10
+Salmos;147;20
+Salmos;148;14
+Salmos;149;9
+Salmos;150;6
+Provérbios;1;33
+Provérbios;2;22
+Provérbios;3;35
+Provérbios;4;27
+Provérbios;5;23
+Provérbios;6;35
+Provérbios;7;27
+Provérbios;8;36
+Provérbios;9;18
+Provérbios;10;32
+Provérbios;11;31
+Provérbios;12;28
+Provérbios;13;25
+Provérbios;14;35
+Provérbios;15;33
+Provérbios;16;33
+Provérbios;17;28
+Provérbios;18;24
+Provérbios;19;29
+Provérbios;20;30
+Provérbios;21;31
+Provérbios;22;29
+Provérbios;23;35
+Provérbios;24;34
+Provérbios;25;28
+Provérbios;26;28
+Provérbios;27;27
+Provérbios;28;28
+Provérbios;29;27
+Provérbios;30;33
+Provérbios;31;31
+Lamentações;1;22
+Lamentações;2;22
+Lamentações;3;66
+Lamentações;4;22
+Lamentações;5;22
+Ezequiel;1;28
+Ezequiel;2;10
+Ezequiel;3;27
+Ezequiel;4;17
+Ezequiel;5;17
+Ezequiel;6;14
+Ezequiel;7;27
+Ezequiel;8;18
+Ezequiel;9;11
+Ezequiel;10;22
+Ezequiel;11;25
+Ezequiel;12;28
+Ezequiel;13;23
+Ezequiel;14;23
+Ezequiel;15;8
+Ezequiel;16;63
+Ezequiel;17;24
+Ezequiel;18;32
+Ezequiel;19;14
+Ezequiel;20;49
+Ezequiel;21;32
+Ezequiel;22;31
+Ezequiel;23;49
+Ezequiel;24;27
+Ezequiel;25;17
+Ezequiel;26;21
+Ezequiel;27;36
+Ezequiel;28;26
+Ezequiel;29;21
+Ezequiel;30;26
+Ezequiel;31;18
+Ezequiel;32;32
+Ezequiel;33;33
+Ezequiel;34;31
+Ezequiel;35;15
+Ezequiel;36;38
+Ezequiel;37;28
+Ezequiel;38;23
+Ezequiel;39;29
+Ezequiel;40;49
+Ezequiel;41;26
+Ezequiel;42;20
+Ezequiel;43;27
+Ezequiel;44;31
+Ezequiel;45;25
+Ezequiel;46;24
+Ezequiel;47;23
+Ezequiel;48;35
+Daniel;1;21
+Daniel;2;49
+Daniel;3;30
+Daniel;4;37
+Daniel;5;31
+Daniel;6;28
+Daniel;7;28
+Daniel;8;27
+Daniel;9;27
+Daniel;10;21
+Daniel;11;45
+Daniel;12;13
+Oséias;1;11
+Oséias;2;23
+Oséias;3;5
+Oséias;4;19
+Oséias;5;15
+Oséias;6;11
+Oséias;7;16
+Oséias;8;14
+Oséias;9;17
+Oséias;10;15
+Oséias;11;12
+Oséias;12;14
+Oséias;13;16
+Oséias;14;9
+Joel;1;20
+Joel;2;32
+Joel;3;21
+Amós;1;15
+Amós;2;16
+Amós;3;15
+Amós;4;13
+Amós;5;27
+Amós;6;14
+Amós;7;17
+Amós;8;14
+Amós;9;15
+Obadias;1;21
+Jonas;1;17
+Jonas;2;10
+Jonas;3;10
+Jonas;4;11
+Miquéias;1;16
+Miquéias;2;13
+Miquéias;3;12
+Miquéias;4;13
+Miquéias;5;15
+Miquéias;6;16
+Miquéias;7;20
+Naum;1;15
+Naum;2;13
+Naum;3;19
+Habacuque;1;17
+Habacuque;2;20
+Habacuque;3;19
+Sofonias;1;18
+Sofonias;2;15
+Sofonias;3;20
+Ageu;1;15
+Ageu;2;23
+Zacarias;1;21
+Zacarias;2;13
+Zacarias;3;10
+Zacarias;4;14
+Zacarias;5;11
+Zacarias;6;15
+Zacarias;7;14
+Zacarias;8;23
+Zacarias;9;17
+Zacarias;10;12
+Zacarias;11;17
+Zacarias;12;14
+Zacarias;13;9
+Zacarias;14;21
+Malaquias;1;14
+Malaquias;2;17
+Malaquias;3;18
+Malaquias;4;6
+Mateus;1;25
+Mateus;2;23
+Mateus;3;17
+Mateus;4;25
+Mateus;5;48
+Mateus;6;34
+Mateus;7;29
+Mateus;8;34
+Mateus;9;38
+Mateus;10;42
+Mateus;11;30
+Mateus;12;50
+Mateus;13;58
+Mateus;14;36
+Mateus;15;39
+Mateus;16;28
+Mateus;17;27
+Mateus;18;35
+Mateus;19;30
+Mateus;20;34
+Mateus;21;46
+Mateus;22;46
+Mateus;23;39
+Mateus;24;51
+Mateus;25;46
+Mateus;26;75
+Mateus;27;66
+Mateus;28;20
+Marcos;1;45
+Marcos;2;28
+Marcos;3;35
+Marcos;4;41
+Marcos;5;43
+Marcos;6;56
+Marcos;7;37
+Marcos;8;38
+Marcos;9;50
+Marcos;10;52
+Marcos;11;33
+Marcos;12;44
+Marcos;13;37
+Marcos;14;72
+Marcos;15;47
+Marcos;16;20
+Lucas;1;80
+Lucas;2;52
+Lucas;3;38
+Lucas;4;44
+Lucas;5;39
+Lucas;6;49
+Lucas;7;50
+Lucas;8;56
+Lucas;9;62
+Lucas;10;42
+Lucas;11;54
+Lucas;12;59
+Lucas;13;35
+Lucas;14;35
+Lucas;15;32
+Lucas;16;31
+Lucas;17;37
+Lucas;18;43
+Lucas;19;48
+Lucas;20;47
+Lucas;21;38
+Lucas;22;71
+Lucas;23;56
+Lucas;24;53
+João;1;51
+João;2;25
+João;3;36
+João;4;54
+João;5;47
+João;6;71
+João;7;53
+João;8;59
+João;9;41
+João;10;42
+João;11;57
+João;12;50
+João;13;38
+João;14;31
+João;15;27
+João;16;33
+João;17;26
+João;18;40
+João;19;42
+João;20;31
+João;21;25
+Atos dos Apóstolos;1;26
+Atos dos Apóstolos;2;47
+Atos dos Apóstolos;3;26
+Atos dos Apóstolos;4;37
+Atos dos Apóstolos;5;42
+Atos dos Apóstolos;6;15
+Atos dos Apóstolos;7;60
+Atos dos Apóstolos;8;40
+Atos dos Apóstolos;9;43
+Atos dos Apóstolos;10;48
+Atos dos Apóstolos;11;30
+Atos dos Apóstolos;12;25
+Atos dos Apóstolos;13;52
+Atos dos Apóstolos;14;28
+Atos dos Apóstolos;15;41
+Atos dos Apóstolos;16;40
+Atos dos Apóstolos;17;34
+Atos dos Apóstolos;18;28
+Atos dos Apóstolos;19;41
+Atos dos Apóstolos;20;38
+Atos dos Apóstolos;21;40
+Atos dos Apóstolos;22;30
+Atos dos Apóstolos;23;35
+Atos dos Apóstolos;24;27
+Atos dos Apóstolos;25;27
+Atos dos Apóstolos;26;32
+Atos dos Apóstolos;27;44
+Atos dos Apóstolos;28;31
+Romanos;1;32
+Romanos;2;29
+Romanos;3;31
+Romanos;4;25
+Romanos;5;21
+Romanos;6;23
+Romanos;7;25
+Romanos;8;39
+Romanos;9;33
+Romanos;10;21
+Romanos;11;36
+Romanos;12;21
+Romanos;13;14
+Romanos;14;23
+Romanos;15;33
+Romanos;16;27
+1 Coríntios;1;31
+1 Coríntios;2;16
+1 Coríntios;3;23
+1 Coríntios;4;21
+1 Coríntios;5;13
+1 Coríntios;6;20
+1 Coríntios;7;40
+1 Coríntios;8;13
+1 Coríntios;9;27
+1 Coríntios;10;33
+1 Coríntios;11;34
+1 Coríntios;12;31
+1 Coríntios;13;13
+1 Coríntios;14;40
+1 Coríntios;15;58
+1 Coríntios;16;24
+2 Coríntios;1;24
+2 Coríntios;2;17
+2 Coríntios;3;18
+2 Coríntios;4;18
+2 Coríntios;5;21
+2 Coríntios;6;18
+2 Coríntios;7;16
+2 Coríntios;8;24
+2 Coríntios;9;15
+2 Coríntios;10;18
+2 Coríntios;11;33
+2 Coríntios;12;21
+2 Coríntios;13;14
+Gálatas;1;24
+Gálatas;2;21
+Gálatas;3;29
+Gálatas;4;31
+Gálatas;5;26
+Gálatas;6;18
+Efésios;1;23
+Efésios;2;22
+Efésios;3;21
+Efésios;4;32
+Efésios;5;33
+Efésios;6;24
+Filipenses;1;30
+Filipenses;2;30
+Filipenses;3;21
+Filipenses;4;23
+Colossenses;1;29
+Colossenses;2;23
+Colossenses;3;25
+Colossenses;4;18
+1 Tessalonicenses;1;10
+1 Tessalonicenses;2;20
+1 Tessalonicenses;3;13
+1 Tessalonicenses;4;18
+1 Tessalonicenses;5;28
+2 Tessalonicenses;1;12
+2 Tessalonicenses;2;17
+2 Tessalonicenses;3;18
+1 Timóteo;1;20
+1 Timóteo;2;15
+1 Timóteo;3;16
+1 Timóteo;4;16
+1 Timóteo;5;25
+1 Timóteo;6;21
+2 Timóteo;1;18
+2 Timóteo;2;26
+2 Timóteo;3;17
+2 Timóteo;4;22
+Tito;1;16
+Tito;2;15
+Tito;3;15
+Filemom;1;25
+Hebreus;1;14
+Hebreus;2;18
+Hebreus;3;19
+Hebreus;4;16
+Hebreus;5;14
+Hebreus;6;20
+Hebreus;7;28
+Hebreus;8;13
+Hebreus;9;28
+Hebreus;10;39
+Hebreus;11;40
+Hebreus;12;29
+Hebreus;13;25
+Tiago;1;27
+Tiago;2;26
+Tiago;3;18
+Tiago;4;17
+Tiago;5;20
+1 Pedro;1;25
+1 Pedro;2;25
+1 Pedro;3;22
+1 Pedro;4;19
+1 Pedro;5;14
+2 Pedro;1;21
+2 Pedro;2;22
+2 Pedro;3;18
+1 João;1;10
+1 João;2;29
+1 João;3;24
+1 João;4;21
+1 João;5;21
+2 João;1;13
+3 João;1;15
+Judas;1;25
+Apocalipse;1;20
+Apocalipse;2;29
+Apocalipse;3;22
+Apocalipse;4;11
+Apocalipse;5;14
+Apocalipse;6;17
+Apocalipse;7;17
+Apocalipse;8;13
+Apocalipse;9;21
+Apocalipse;10;11
+Apocalipse;11;19
+Apocalipse;12;17
+Apocalipse;13;18
+Apocalipse;14;20
+Apocalipse;15;8
+Apocalipse;16;21
+Apocalipse;17;18
+Apocalipse;18;24
+Apocalipse;19;21
+Apocalipse;20;15
+Apocalipse;21;27
+Apocalipse;22;21
